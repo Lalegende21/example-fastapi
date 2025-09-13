@@ -8,7 +8,11 @@ from fastapi.middleware.cors import CORSMiddleware
 # Create the tables in the database if they don't already exist
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+app = FastAPI(
+    title="Blog API",
+    description="A simple blog API",
+    version="1.0.0"
+)
 
 origins = [
     "http://localhost.tiangolo.com",
